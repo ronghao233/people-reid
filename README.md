@@ -1,16 +1,14 @@
 The whole process of using colab to train Person_reID
 =====
-1,Create a colab notebook on Google Cloud Disk
----
+# 1,Create a colab notebook on Google Cloud Disk
 First associate Google Cloud Disk with colab  
 Click New -> More -> Connect more apps, find Google Colaboratory, and connect.  
 Create a new colab notebook   
 Click New -> More ->Google Colaboratory  
-2. Use free GPU
----
-Edit-> Notebook settings, select GPU  
-#3. Execute the command (press alt+enter to execute quickly)
----
+# 2. Use free GPU  
+Edit-> Notebook settings, select GPU   
+# 3. Execute the command (press alt+enter to execute quickly)
+
 colab is equivalent to jupyter notebook, you can run python code directly,
 
 This notebook can also execute some commands under linux, because this is actually a linux virtual machine, but when you execute linux commands, you must add! In front of it, such as:
