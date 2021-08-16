@@ -47,17 +47,20 @@ Then you can see the market data set under the driver file of colab, enter the c
 The front is the directory where the compressed package is located, and the back is the directory to save after decompression  
 ## 8. Enter the operating directory and run the program.  
 Need to change first, the corresponding path in prapare.py ,train.py ,test.py and demo.py  
-```prepare.py
-# You only need to change this line to your dataset download path
+```
+# You only need to change this line to your dataset download path_ prepare.py
 download_path = '/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15'
 ```
-```train.py 
+```
+# You only need to change this line to your Market-1501-v15.09.15/pytorch download path_ train.py
 parser.add_argument('--data_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='training dir path')
 ```
-```test.py
+```
+# You only need to change this line to your Market-1501-v15.09.15/pytorch download path_ test.py
 parser.add_argument('--test_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='./test_data')
 ```
-```demo.py
+```
+# You only need to change this line to your Market-1501-v15.09.15/pytorch download path_ demo.py
 parser.add_argument('--test_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='./test_data')
 ```
 Enter the catalog:
