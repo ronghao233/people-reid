@@ -8,8 +8,7 @@ Click New -> More ->Google Colaboratory
 ## 2. Use free GPU  
 Edit-> Notebook settings, select GPU   
 ## 3. Execute the command (press alt+enter to execute quickly)  
-colab is equivalent to jupyter notebook, you can run python code directly,  
-This notebook can also execute some commands under linux, because this is actually a linux virtual machine, but when you execute linux commands, you must add! In front of it,   such as:
+colab is equivalent to jupyter notebook, you can run python code directly, This notebook can also execute some commands under linux, because this is actually a linux virtual machine, but when you execute linux commands, you must add ! in front of it, such as:
 ``` 
 !ls, !pwd.
 ```
