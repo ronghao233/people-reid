@@ -19,7 +19,8 @@ Edit-> Notebook settings, select GPU
 colab is equivalent to jupyter notebook, you can run python code directly,
 
 This notebook can also execute some commands under linux, because this is actually a linux virtual machine, but when you execute linux commands, you must add! In front of it, such as:
-``` !ls, !pwd.
+``` 
+!ls, !pwd.
 ```
 4. Due to the needs of the project, pytorch needs to be installed here and related configuration is performed. Enter the following code in colab:
 ```
@@ -34,13 +35,13 @@ This notebook can also execute some commands under linux, because this is actual
 ! pip install timm
 ```
 5. Hang colab on Google Cloud Disk Drive, so that you can save the results to Google Cloud Disk:
-
+```
 from google.colab import drive
 
 drive.mount('/content/drive/')
-
+```
 6. Enter the path
-
+```
 path = "/content/drive/My Drive/people"
 
 import os
@@ -50,33 +51,43 @@ from google.colab import drive
 os.chdir(path)
 
 os.listdir(path)
-
+```
 7. Unzip the program on Google Cloud Disk to colab:
-
+```
 !unzip '/content/drive/MyDrive/people/person reid.zip' -d '/content/drive/MyDrive/people/person'
-
+```
 The front is the path of the compressed package, and the back is the path after decompression.
 
 You can also download the code directly from GitHub:
-
+```
 !git clone https://github.com/layumi/Person_reID_baseline_pytorch.git
-
+```
 8. Enter the operating directory and run the program. (Need to change first, the corresponding path in prapare.py ,train.py ,and test.py)
-
+```
 %cd /content/drive/MyDrive/people/person/person\ reid
-
-Data preparation: python prepare.py
-
-Training:! python train.py
-
-Test:! Python test.py
-
-Evaluation: !python evaluate_gpu.py
-
-Visualization: !python demo.py --query_index 750 (0-3367)
-
+```
+Data preparation:
+```
+python prepare.py
+```
+Training:
+```
+! python train.py
+```
+Test:
+```
+! Python test.py
+```
+Evaluation: 
+```
+!python evaluate_gpu.py
+```
+Visualization: 
+```
+!python demo.py --query_index 750 (0-3367)
+```
 9. If you want to download the file to the local, run the following code, (compress first, then download to the local)
-
+```
 import os, tarfile
 
 import os
@@ -100,7 +111,7 @@ def make_targz_one_by_one(output_filename, source_dir):
   files.download(output_filename)
  
 make_targz_one_by_one('peo', '/content/drive/MyDrive/people/person/person reid')
-
+```
 peo is the name of the compressed file, which can be anything you want. /content/drive/MyDrive/people/person/person reid is the name of the file to be downloaded.
 
 
