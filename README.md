@@ -1,6 +1,6 @@
 The whole process of using colab to train Person_reID
 =====
-## 1,Create a colab notebook on Google Drive
+## 1.Create a colab notebook on Google Drive
 If this is your first time associating Google Drive with colab :
 Click New -> More -> Connect more apps, find Google Colaboratory, and connect.  
 
