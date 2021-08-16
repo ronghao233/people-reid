@@ -1,8 +1,9 @@
 The whole process of using colab to train Person_reID
 =====
-## 1,Create a colab notebook on Google Cloud Disk
-First associate Google Cloud Disk with colab  
+## 1,Create a colab notebook on Google Drive
+If this is your first time associating Google Drive with colab :
 Click New -> More -> Connect more apps, find Google Colaboratory, and connect.  
+
 Create a new colab notebook   
 Click New -> More ->Google Colaboratory  
 ## 2. Use free GPU  
@@ -25,15 +26,16 @@ colab is equivalent to jupyter notebook, you can run python code directly, This 
 from google.colab import drive
 drive.mount('/content/drive/')
 ```
+Run this code, it will display a connection verification, click to verify.  
 ## 6. Enter the path
 ```
-path = "/content/drive/My Drive/people"
+path = "/content/drive/MyDrive"
 import os
 from google.colab import drive
 os.chdir(path)
 os.listdir(path)
 ```
-## 7. Download the code directly from GitHub:  
+## 7. Download the code directly from GitHub and Prepare the data set:  
 ```
 !git clone https://github.com/layumi/Person_reID_baseline_pytorch.git
 ```
@@ -41,8 +43,13 @@ you can also unzip the program on Google Cloud Disk to colab:
 ```
 !unzip '/content/drive/MyDrive/people/person reid.zip' -d '/content/drive/MyDrive/people/person'
 ```
-The front is the path of the compressed package, and the back is the path after decompression.
-
+The front is the path of the compressed package, and the back is the path after decompression.  
+Download Market-1501 to your computer, then upload the compressed package to Google Driver  
+Then you can see the market data set under the driver file of colab, enter the code, unzip the data set to the project 
+```
+!unzip '/content/drive/MyDrive/Market-1501-v15.09.15.zip' -d '/content/drive/MyDrive/Person_reID_baseline_pytorch'
+```
+The front is the directory where the compressed package is located, and the back is the directory to save after decompression  
 ## 8. Enter the operating directory and run the program.  
 (Need to change first, the corresponding path in prapare.py ,train.py ,and test.py)
 ```
@@ -50,7 +57,7 @@ The front is the path of the compressed package, and the back is the path after 
 ```
 Data preparation:
 ```
-python prepare.py
+!python prepare.py
 ```
 Training:
 ```
