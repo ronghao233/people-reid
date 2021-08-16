@@ -1,6 +1,6 @@
 The whole process of using colab to train Person_Reid
 =====
-1,Create a colab notebook on Google Cloud Disk
+#1,Create a colab notebook on Google Cloud Disk
 ---
 First associate Google Cloud Disk with colab
 
@@ -10,19 +10,20 @@ Create a new colab notebook
 
 Click New -> More ->Google Colaboratory
 
-2. Use free GPU
+#2. Use free GPU
 ---
 Edit-> Notebook settings, select GPU
 
-3. Execute the command (press alt+enter to execute quickly)
-----
+#3. Execute the command (press alt+enter to execute quickly)
+---
 colab is equivalent to jupyter notebook, you can run python code directly,
 
 This notebook can also execute some commands under linux, because this is actually a linux virtual machine, but when you execute linux commands, you must add! In front of it, such as:
 ``` 
 !ls, !pwd.
 ```
-4. Due to the needs of the project, pytorch needs to be installed here and related configuration is performed. Enter the following code in colab:
+#4. Due to the needs of the project, pytorch needs to be installed here and related configuration is performed. Enter the following code in colab:
+---
 ```
 !pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 
@@ -34,13 +35,15 @@ This notebook can also execute some commands under linux, because this is actual
 
 ! pip install timm
 ```
-5. Hang colab on Google Cloud Disk Drive, so that you can save the results to Google Cloud Disk:
+#5. Hang colab on Google Cloud Disk Drive, so that you can save the results to Google Cloud Disk:
+---
 ```
 from google.colab import drive
 
 drive.mount('/content/drive/')
 ```
-6. Enter the path
+#6. Enter the path
+---
 ```
 path = "/content/drive/My Drive/people"
 
@@ -52,7 +55,8 @@ os.chdir(path)
 
 os.listdir(path)
 ```
-7. Unzip the program on Google Cloud Disk to colab:
+#7. Unzip the program on Google Cloud Disk to colab:
+---
 ```
 !unzip '/content/drive/MyDrive/people/person reid.zip' -d '/content/drive/MyDrive/people/person'
 ```
@@ -62,7 +66,9 @@ You can also download the code directly from GitHub:
 ```
 !git clone https://github.com/layumi/Person_reID_baseline_pytorch.git
 ```
-8. Enter the operating directory and run the program. (Need to change first, the corresponding path in prapare.py ,train.py ,and test.py)
+#8. Enter the operating directory and run the program.
+---
+(Need to change first, the corresponding path in prapare.py ,train.py ,and test.py)
 ```
 %cd /content/drive/MyDrive/people/person/person\ reid
 ```
@@ -86,7 +92,9 @@ Visualization:
 ```
 !python demo.py --query_index 750 (0-3367)
 ```
-9. If you want to download the file to the local, run the following code, (compress first, then download to the local)
+#9. If you want to download the file to the local, run the following code
+---
+(compress first, then download to the local)
 ```
 import os, tarfile
 
