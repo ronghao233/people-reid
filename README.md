@@ -38,12 +38,7 @@ os.listdir(path)
 ## 7. Download the code directly from GitHub and Prepare the data set:  
 ```
 !git clone https://github.com/layumi/Person_reID_baseline_pytorch.git
-```
-you can also unzip the program on Google Cloud Disk to colab:
-```
-!unzip '/content/drive/MyDrive/people/person reid.zip' -d '/content/drive/MyDrive/people/person'
-```
-The front is the path of the compressed package, and the back is the path after decompression.  
+``` 
 Download Market-1501 to your computer, then upload the compressed package to Google Driver  
 Then you can see the market data set under the driver file of colab, enter the code, unzip the data set to the project 
 ```
@@ -51,21 +46,30 @@ Then you can see the market data set under the driver file of colab, enter the c
 ```
 The front is the directory where the compressed package is located, and the back is the directory to save after decompression  
 ## 8. Enter the operating directory and run the program.  
-(Need to change first, the corresponding path in prapare.py ,train.py ,and test.py)
-
+Need to change first, the corresponding path in prapare.py ,train.py ,test.py and demo.py  
 ```prepare.py
 # You only need to change this line to your dataset download path
 download_path = '/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15'
 ```
-
+```train.py 
+parser.add_argument('--data_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='training dir path')
 ```
-%cd /content/drive/MyDrive/people/person/person\ reid
+```test.py
+parser.add_argument('--test_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='./test_data')
+```
+```demo.py
+parser.add_argument('--test_dir',default='/content/drive/MyDrive/Person_reID_baseline_pytorch/Market-1501-v15.09.15/pytorch',type=str, help='./test_data')
+```
+Enter the catalog:
+```
+%cd /content/drive/MyDrive/Person_reID_baseline_pytorch
 ```
 Data preparation:
 ```
 !python prepare.py
 ```
 Training:
+
 ```
 ! python train.py
 ```
@@ -95,7 +99,7 @@ def make_targz_one_by_one(output_filename, source_dir):
       tar.add(pathfile)
   tar.close()
   files.download(output_filename)
-make_targz_one_by_one('peo', '/content/drive/MyDrive/people/person/person reid')
+make_targz_one_by_one('peo', '/content/drive/MyDrive/Person_reID_baseline_pytorch')
 ```
 peo is the name of the compressed file, which can be anything you want. /content/drive/MyDrive/people/person/person reid is the name of the file to be downloaded.
 
