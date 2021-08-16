@@ -1,4 +1,4 @@
-The whole process of using colab to train Person_Reid
+The whole process of using colab to train Person_reID
 =====
 #1,Create a colab notebook on Google Cloud Disk
 ---
